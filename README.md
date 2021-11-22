@@ -60,6 +60,10 @@ Model umożliwiający predykcję wystąpienia u pacjenta choroby serca korzysta 
 
 ----tu screen finalnego pipelinu :) -----
 
+
+![Optional Text](../images/train-pipeline.png
+
+
 Skuteczność predykcji przewidywanego modelu możliwa jest do sprawdzenia za pomocą opcji "Evaluate Model". Widać, że opracowany na podstawie danych "heartdata" model uzyskał bardzo dobre wyniki:
  * Accuracy 0.865
  * Precision 0.888
