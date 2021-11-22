@@ -80,7 +80,7 @@ W celu wykorzystania utworzonego modelu predykcji konieczne jest utworzenie "Int
 
 Utworzony pipeline prezentuje się następująco:
 
-![Optional Text](images/interference-pipeline.png)
+![Optional Text](images/test-pipeline.png)
 
 
 
