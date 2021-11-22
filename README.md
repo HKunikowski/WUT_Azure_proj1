@@ -6,7 +6,6 @@ Project 1 for Microsoft Azure on WUT
 * [Tematyka projektu](#tematyka-projektu)
 * [Architektura](#architektura)
 * [Rozwiązanie](#rozwiązanie)
-* [Instrukcja reprodukcji rozwiązania](#instrukcja-reprodukcji-rozwiązania)
 * [Demo dzałania](#demo-działania)
 
 ## The Team
@@ -14,7 +13,7 @@ Project 1 for Microsoft Azure on WUT
 * Danuta Stawiarz
 
 ## Tematyka projektu
-Cel projektu stanowiło utworzenie modelu, który na podstawie wprowadzonych danych o stanie zdrowia pacjenta wykonuje predykcję prawdopodobieństwa, z jakim może ona zapaść na chorobę serca. Projekt zakładał wykorzystanie i przetestowania działania komponentów platformy Azure.
+Cel projektu stanowiło utworzenie modelu, który na podstawie wprowadzonych danych o stanie zdrowia pacjenta wykonuje predykcję prawdopodobieństwa, z jakim może on zapaść na chorobę serca. Projekt zakładał wykorzystanie i przetestowania działania komponentów platformy Azure - Azure Storage Account oraz Machine Learning Studio oraz udostępnienie programu potencjalnemu klientowi.
 
 ### Opis danych
 W skład danych dotyczących parametrów zdrowotnych pacjenta wchodzą:
@@ -40,8 +39,12 @@ W projekcie zostały wykorzystane następujące komponenty platformy Azure:
 
 Schemat działania przedstawiony został w formie graficznej poniżej:
 
+![Optional Text](images/architecture.png)
+
+
+
 ## Rozwiązanie
-Rozwiązanie zakłada działania na etapie przechowywania danych, ich przetwarzania oraz tworzenia modelu predykcji.
+Rozwiązanie zakłada działania na etapie przechowywania danych, ich przetwarzania, tworzenia modelu predykcji oraz deployowania go w celu komercyjnego zastosowania.
 
 ### Przechowywanie danych
 W celu trwałego przechowywania danych utworzony został serwis Storage Account. Plik o formacie CSV zawierający informacje dotyczące parametrów zdrowia pacjentów został umieszczony w kontenerze o nazwie "heartdata".
@@ -53,15 +56,12 @@ Następnie został stworzonony nowe Pipeline, gdzie dane uległy przetworzeniu. 
 * przeskalowanie danych kategorycznych (ChestPainType, RestingECG, ST_Slope)
 * usunięcie braków
 
-Do dokonania zmian w danych wykorzystano skrypty napisane w języku Python wykonywane w obrębie pipelinu. Umożliwiają one sprawne i nieskomplikowane przetwarzanie danych w tabelach w wybrany sposób.
+Do dokonania zmian w danych wykorzystano skrypty napisane w języku Python wykonywane w obrębie pipelinu. Umożliwiają one sprawne i nieskomplikowane przetwarzanie danych w tabelach w wybrany sposób. Skrypty zostały umieszczone w folderze .....
 
 ### Trenowanie modelu i ewaluacja
 Model umożliwiający predykcję wystąpienia u pacjenta choroby serca korzysta z regresji. Pipeline zawierający zarówno przetwarzanie danych, ich podział na zbiór uczący oraz testowy i trening modelu przedstawia się następująco:
 
-----tu screen finalnego pipelinu :) -----
-
-
-![Optional Text](../images/train-pipeline.png
+![Optional Text](images/train-pipeline.png)
 
 
 Skuteczność predykcji przewidywanego modelu możliwa jest do sprawdzenia za pomocą opcji "Evaluate Model". Widać, że opracowany na podstawie danych "heartdata" model uzyskał bardzo dobre wyniki:
@@ -72,24 +72,21 @@ Skuteczność predykcji przewidywanego modelu możliwa jest do sprawdzenia za po
  * AUC 0.936
 
 Dobrą jakość predykcji potwierdza również wykres krzywej ROC:
-----tu dać wykres krzywej ------
+![Optional Text](images/roc-curve.png)
 
 
 ### Interference model
 W celu wykorzystania utworzonego modelu predykcji konieczne jest utworzenie "Interference pipeline", który z wykorzystaniem modelu będzie w stanie przeprowadzać predykcję dla danych docelowo wprowadzanych przez użytkownika. Wymaga to dokonania nielicznych zmian w przebiegu- zmiany źródła danych na "Enter Data Manually".
---- i tu pytanie co z tym web outuputem to nie jest konieczne???-----
+
 Utworzony pipeline prezentuje się następująco:
+
+![Optional Text](images/interference-pipeline.png)
 
 
 
 ### Deploy i test działania
-Ostatni krok stanowi deploy utworzonego "Interference pipeline". Po wykonaniu tej czynności link do endpointu pojawia się w zakładce "Endpoints", dzięki czemu klient może z łatwością wykorzystać go w swojej aplikaji. W celu przetestowania działania
+Ostatni krok stanowi deploy utworzonego "Interference pipeline". Po wykonaniu tej czynności link do endpointu pojawia się w zakładce "Endpoints", dzięki czemu klient może z łatwością wykorzystać go w swojej aplikaji. Działanie zostało przedstawione w filmiku na końcu pliku.
 
-
-
-
-
-## Instrukcja reprodukcji rozwiązania
 
 ## Demo działania
 Pod linkiem umieszczono film, na którym zostało przedstawione działanie projektu:
