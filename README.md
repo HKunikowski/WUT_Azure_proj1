@@ -74,6 +74,8 @@ Skuteczność predykcji przewidywanego modelu możliwa jest do sprawdzenia za po
 Dobrą jakość predykcji potwierdza również wykres krzywej ROC:
 ![Optional Text](images/roc-curve.png)
 
+Skuteczność przewidywania dobrze obrazuje następujący diagram:
+![Optional Text](images/prediction-correctness.png)
 
 ### Interference model
 W celu wykorzystania utworzonego modelu predykcji konieczne jest utworzenie "Interference pipeline", który z wykorzystaniem modelu będzie w stanie przeprowadzać predykcję dla danych docelowo wprowadzanych przez użytkownika. Wymaga to dokonania nielicznych zmian w przebiegu- zmiany źródła danych na "Enter Data Manually".
