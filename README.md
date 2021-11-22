@@ -9,8 +9,8 @@ Project 1 for Microsoft Azure on WUT
 * [Demo dzałania](#demo-działania)
 
 ## The Team
-* Hubert Kunikowski
-* Danuta Stawiarz
+* [Hubert Kunikowski](https://github.com/HKunikowski)
+* [Danuta Stawiarz](https://github.com/DanutaStawiarz)
 
 ## Tematyka projektu
 Cel projektu stanowiło utworzenie modelu, który na podstawie wprowadzonych danych o stanie zdrowia pacjenta wykonuje predykcję prawdopodobieństwa, z jakim może on zapaść na chorobę serca. Projekt zakładał wykorzystanie i przetestowania działania komponentów platformy Azure - Azure Storage Account oraz Machine Learning Studio oraz udostępnienie programu potencjalnemu klientowi.
