@@ -56,13 +56,33 @@ Następnie został stworzonony nowe Pipeline, gdzie dane uległy przetworzeniu. 
 Do dokonania zmian w danych wykorzystano skrypty napisane w języku Python wykonywane w obrębie pipelinu. Umożliwiają one sprawne i nieskomplikowane przetwarzanie danych w tabelach w wybrany sposób.
 
 ### Trenowanie modelu i ewaluacja
-Model umożliwiający predykcję wystąpienia u pacjenta choroby serca korzysta z regresji.
-
-
-### Pipeline
-Pipeline zawierający zarówno przetwarzanie danych, ich podział i trening modelu przedstawia się następująco:
+Model umożliwiający predykcję wystąpienia u pacjenta choroby serca korzysta z regresji. Pipeline zawierający zarówno przetwarzanie danych, ich podział na zbiór uczący oraz testowy i trening modelu przedstawia się następująco:
 
 ----tu screen finalnego pipelinu :) -----
+
+Skuteczność predykcji przewidywanego modelu możliwa jest do sprawdzenia za pomocą opcji "Evaluate Model". Widać, że opracowany na podstawie danych "heartdata" model uzyskał bardzo dobre wyniki:
+ * Accuracy 0.865
+ * Precision 0.888
+ * Recall 0.893
+ * F1 Score 0.89
+ * AUC 0.936
+
+Dobrą jakość predykcji potwierdza również wykres krzywej ROC:
+----tu dać wykres krzywej ------
+
+
+### Interference model
+W celu wykorzystania utworzonego modelu predykcji konieczne jest utworzenie "Interference pipeline", który z wykorzystaniem modelu będzie w stanie przeprowadzać predykcję dla danych docelowo wprowadzanych przez użytkownika. Wymaga to dokonania nielicznych zmian w przebiegu- zmiany źródła danych na "Enter Data Manually".
+--- i tu pytanie co z tym web outuputem to nie jest konieczne???-----
+Utworzony pipeline prezentuje się następująco:
+
+
+
+### Deploy i test działania
+Ostatni krok stanowi deploy utworzonego "Interference pipeline". Po wykonaniu tej czynności link do endpointu pojawia się w zakładce "Endpoints", dzięki czemu klient może z łatwością wykorzystać go w swojej aplikaji. W celu przetestowania działania
+
+
+
 
 
 ## Instrukcja reprodukcji rozwiązania
