@@ -56,7 +56,7 @@ Następnie został stworzonony nowe Pipeline, gdzie dane uległy przetworzeniu. 
 * przeskalowanie danych kategorycznych (ChestPainType, RestingECG, ST_Slope)
 * usunięcie braków
 
-Do dokonania zmian w danych wykorzystano skrypty napisane w języku Python wykonywane w obrębie pipelinu. Umożliwiają one sprawne i nieskomplikowane przetwarzanie danych w tabelach w wybrany sposób. Skrypty zostały umieszczone w folderze .....
+Do dokonania zmian w danych wykorzystano skrypty napisane w języku Python wykonywane w obrębie pipelinu. Umożliwiają one sprawne i nieskomplikowane przetwarzanie danych w tabelach w wybrany sposób. Skrypty zostały umieszczone w folderze scripts.
 
 ### Trenowanie modelu i ewaluacja
 Model umożliwiający predykcję wystąpienia u pacjenta choroby serca korzysta z regresji. Pipeline zawierający zarówno przetwarzanie danych, ich podział na zbiór uczący oraz testowy i trening modelu przedstawia się następująco:
@@ -75,6 +75,7 @@ Dobrą jakość predykcji potwierdza również wykres krzywej ROC:
 ![Optional Text](images/roc-curve.png)
 
 Skuteczność przewidywania dobrze obrazuje następujący diagram:
+
 ![Optional Text](images/prediction-correctness.png)
 
 ### Interference model
@@ -91,8 +92,5 @@ Ostatni krok stanowi deploy utworzonego "Interference pipeline". Po wykonaniu te
 
 
 ## Demo działania
-Pod linkiem umieszczono film, na którym zostało przedstawione działanie projektu:
-
-
-
-
+Pod linkiem umieszczono film, na którym zostało przedstawione działanie projektu. Działanie projektu zaprezentowane zostało poprzez uruchomienie napisanego w języku Python konsolowego programu, wykorzystującego utworzony przy pomocy platformy Microsoft Azure endpoint.
+Link: https://youtu.be/qEi_2D5EfEY
